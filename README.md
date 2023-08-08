@@ -1,27 +1,34 @@
-# GlowTK
+# My Tkinter Utilities
 
-GlowTK is a wrapper for the tkinter library, designed to enhance functionality and improve aesthetics in your Python GUI applications.
+A collection of utility functions for working with Tkinter, the standard GUI (Graphical User Interface) library in Python.
 
-## `promptFileOpen` Function
+## Functions
 
-### Description
+### `promptFileOpen`
 
-The `promptFileOpen` function displays a file selection dialog, allowing the user to choose a file to open. It provides an easy way to interact with the user's file system and retrieve the selected file path.
+**Description:** Opens a file selection dialog to prompt the user for opening a file.
 
-### Parameters
+**Parameters:**
+- `Title` (`str`): The title to be displayed in the file dialog.
 
-- `Title` (str): The title to be displayed in the file dialog.
+**Returns:**
+- `Selected File Path` (`str`): The path of the file selected by the user.
 
-- `varname` (str): The name of the variable where the selected file path will be stored.
-
-### Returns
-
-- `Selected File Path` (str): The path of the file selected by the user.
-
-### Example Usage
-
-Here's an example of how to use the `promptFileOpen` function:
-
+**Example Usage:**
 ```python
-selected_path = promptFileOpen("Example", "path")
-print("Selected file path:", selected_path)
+import tkinter as tk
+from tkinter import filedialog
+
+
+# Using promptFileOpen
+file_path = promptFileOpen("Select a file")
+print("Selected file path:", file_path)
+```
+### `createWindow`
+
+**Description** Opens a window with the specified attributes
+
+**Parameters:**
+- `Title` (`str`): Title of the window
+- `Geometry` (`str`): Geometry of window, works like vanilla tkinter. Example: `400x400`.
+- `Background` (`str`): Background color, works like vanilla tkinter.
