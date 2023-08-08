@@ -11,3 +11,6 @@ Returns:
 - varname (str): The variable for where the path of the selected file will work
   Returns:
 - Selected File Path (str): The path of the file selected by the user.
+
+# promptFileOpen example:
+promptFileOpen("Example", "path")
