@@ -32,3 +32,11 @@ print("Selected file path:", file_path)
 - `Title` (`str`): Title of the window
 - `Geometry` (`str`): Geometry of window, works like vanilla tkinter. Example: `400x400`.
 - `Background` (`str`): Background color, works like vanilla tkinter.
+
+  **example usage**
+  ```python
+  import tkinter as tk
+
+  # Using createWindow
+  createWindow("My window", "400x400", "white")
+  ```
