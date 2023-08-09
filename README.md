@@ -85,7 +85,7 @@ window.mainloop()
 
 Description: Adds a textbox to window
 Parameters:
-`window` (Tk)
+- `window` (Tk)
 Example:
 ```python
 import tkinter as tk
