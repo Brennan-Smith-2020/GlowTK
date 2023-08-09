@@ -15,8 +15,9 @@ def create_window(Title, Geometry, Background=None, Theme=None):
     window.geometry(Geometry)
     
     # Apply theme if provided
-    if Theme:
+    if Theme != None:
         apply_theme(window, Theme)
+        print("trying to add theme")
     
     if Background == None:
         pass
