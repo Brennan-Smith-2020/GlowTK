@@ -1,3 +1,6 @@
+### CHECK THE WIKI ###
+
+
 # GlowTK: Enhancing Tkinter Experience
 
 GlowTK is a collection of utility functions designed to enhance the experience of using Tkinter, the standard GUI (Graphical User Interface) library in Python.
