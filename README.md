@@ -6,7 +6,9 @@ Choosing colors:
 The code has a builtin class for choosing colors. It currently has 3 builtin. White, Grey and black. do color.WHITE/whatever color in all caps here to use.
 If you get an error try importing + running initialize()
 
-Functions:
+## How to import
+in this tutorial I said you needed to do import GlowTK, however if that provides an error make a parent folder to the GlowTK folder (Doesnt have to be a parent folder but is easier) than write your code by importing as follows: `from GlowTK.src.main.wrapper import [functions here, seperated by commas]
+## Functions:
 
 1. `promptFileOpen`
 
