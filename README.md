@@ -85,10 +85,12 @@ window.mainloop()
 
 Description: Adds a textbox to window
 Parameters:
-- `window` (Tk)
+`window` (Tk)
 Example:
 ```python
 import tkinter as tk
 import GlowTk
+window = create_window("TEST", "400x400")
 textbox = add_textbox(window)
+window.mainloop()
 ```
