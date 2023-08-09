@@ -9,7 +9,7 @@ class Color:
     GREY = "#615d53"
 
 
-def create_window(Title, Geometry, Background, Theme=None):
+def create_window(Title, Geometry, Background=None, Theme=None):
     window = tk.Tk()
     window.title(Title)
     window.geometry(Geometry)
@@ -18,7 +18,7 @@ def create_window(Title, Geometry, Background, Theme=None):
     if Theme:
         apply_theme(window, Theme)
     
-    if Background == "default":
+    if Background == None:
         pass
     else:
         window.configure(bg=Background)
