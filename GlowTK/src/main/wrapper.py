@@ -28,17 +28,16 @@ def create_window(Title, Geometry, Background=None, Theme=None):
         window.configure(bg=Background)
     return window
 
-
-def apply_theme(window, Theme):
+def apply_theme(window, Theme=None):
     style = ttk.Style()
-    
-    if Theme == "Metro":
-        style.configure("TButton", background=Color.GREY, font=("Helvetica", 12))
-        style.configure("TLabel", foreground=Color.BLACK)
-    elif Theme == "Dark":
-        style.configure("TButton", background=Color.BLACK, foreground=Color.WHITE, font=("Helvetica", 12))
-        style.configure("TLabel", foreground=Color.WHITE)
-    # Add more theme configurations here. Will do in later update, im to tired right now.
+    style.theme_use(Theme)  # Initialize the default theme
+
+    style.configure("TButton", background=Color.GREY)
+    style.configure("TLabel", foreground=Color.BLACK)
+
+    window.tk_setPalette(background=style.lookup("TButton", "background"),
+                         foreground=style.lookup("TLabel", "foreground"))
+
     
 
 def add_button(window, text, command, X, Y, color=None):
@@ -46,8 +45,8 @@ def add_button(window, text, command, X, Y, color=None):
     button.place(x=X, y=Y)
     
 
-def add_label(window, text, X, Y, color=None):
-    label = ttk.Label(window, text=text, style=color)
+def add_label(window, text, X, Y, color=None, Font=None, FontSize=12):
+    label = ttk.Label(window, text=text, style=color, font=(Font, FontSize))
     label.place(x=X, y=Y)
     
 
