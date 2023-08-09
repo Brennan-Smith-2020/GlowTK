@@ -1,9 +1,10 @@
-**check wiki for more information**
-
-
 # GlowTK: Enhancing Tkinter Experience
 
 GlowTK is a collection of utility functions designed to enhance the experience of using Tkinter, the standard GUI (Graphical User Interface) library in Python.
+
+Choosing colors:
+The code has a builtin class for choosing colors. It currently has 3 builtin. White, Grey and black. do color.WHITE/whatever color in all caps here to use.
+If you get an error try importing + running initialize()
 
 Functions:
 
@@ -49,6 +50,7 @@ Functions:
    Parameters:
    - `window` (Tk): The window instance to add the button to.
    - `text` (str): The label text for the button.
+   - `color` (class)
    - `command` (callable): The function to execute when the button is clicked.
    - `X` (int): The x-coordinate for placing the button.
    - `Y` (int): The y-coordinate for placing the button.
@@ -60,7 +62,7 @@ Functions:
        print("Button clicked!")
    
    window = GlowTK.create_window("My window", "400x400", "white")
-   GlowTK.add_button(window, "Click me", my_function, X=100, Y=100)
+   GlowTK.add_button(window, "Click me", my_function, X=100, Y=100, color.WHITE) # Deafults to NONE/Null if you leave empty
    window.mainloop()
    ```
 
@@ -72,12 +74,13 @@ Parameters:
 - `text` (str)
 - `X` (int)
 - `Y` (int)
+- `color` (class)
 Example:
 ```python
 import tkinter as tk
 import GlowTK
 window = create_window("TEST", "400x400", "white")
-add_label(window, "hi :)", 100, 100)
+add_label(window, "hi :)", 100, 100, color.WHITE) # Deafults to NONE/Null if you leave empty
 window.mainloop()
 ```
 
@@ -85,7 +88,8 @@ window.mainloop()
 
 Description: Adds a textbox to window
 Parameters:
-`window` (Tk)
+- `window` (Tk)
+- `color` (class)
 Example:
 ```python
 import tkinter as tk
