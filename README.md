@@ -80,3 +80,15 @@ window = create_window("TEST", "400x400", "white")
 add_label(window, "hi :)", 100, 100)
 window.mainloop()
 ```
+
+5. `add_textbox`
+
+Description: Adds a textbox to window
+Parameters:
+`window` (Tk)
+Example:
+```python
+import tkinter as tk
+import GlowTk
+textbox = add_textbox(window)
+```
