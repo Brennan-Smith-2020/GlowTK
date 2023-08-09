@@ -1,4 +1,4 @@
-### CHECK THE WIKI ###
+**check wiki for more information**
 
 
 # GlowTK: Enhancing Tkinter Experience
@@ -63,3 +63,20 @@ Functions:
    GlowTK.add_button(window, "Click me", my_function, X=100, Y=100)
    window.mainloop()
    ```
+
+4. `add_label`
+
+Description: Adds a label to a tkinter window
+Parameters:
+- `window` (Tk)
+- `text` (str)
+- `X` (int)
+- `Y` (int)
+Example:
+```python
+import tkinter as tk
+import GlowTK
+window = create_window("TEST", "400x400", "white")
+add_label(window, "hi :)", 100, 100)
+window.mainloop()
+```
