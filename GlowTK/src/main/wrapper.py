@@ -21,9 +21,3 @@ def add_label(window, text, X, Y):
 def promptFileOpen(Title):
     file_path = filedialog.askopenfilename(title=Title)
     return file_path
-
-
-window = create_window("TEST", "400x400", "white")
-add_label(window, "TEST", 100, 100)
-
-print("tes :)")
