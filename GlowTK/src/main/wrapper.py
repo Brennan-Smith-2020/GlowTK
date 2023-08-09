@@ -30,9 +30,9 @@ def add_label(window, text, X, Y, color=None, Font=None, FontSize=12):
     label.place(x=X, y=Y)
     
 
-def add_textbox(window, color=None):
+def add_textbox(window, X, Y, color=None):
     entry = ttk.Entry(window, style=color)
-    entry.place(x=10, y=10)  # Adjust the coordinates as needed
+    entry.place(x=X, y=Y)  # Adjust the coordinates as needed
 
 
 def promptFileOpen(Title=None):
@@ -40,4 +40,3 @@ def promptFileOpen(Title=None):
         Title = "File Menu"
     file_path = filedialog.askopenfilename(title=Title)
     return file_path
-
