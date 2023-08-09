@@ -18,6 +18,10 @@ def add_label(window, text, X, Y):
     label = tk.Label(window, text)
     label.place(x=X, y=Y)
 
+def add_textbox(window):
+    entry = tk.Entry(window)
+    entry.pack()
+
 def promptFileOpen(Title):
     file_path = filedialog.askopenfilename(title=Title)
     return file_path
