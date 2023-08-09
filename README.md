@@ -77,6 +77,8 @@ Parameters:
 - `X` (int)
 - `Y` (int)
 - `color` (class)
+- `Font` (str), has deafult therfor not needed to add
+- `FontSize` (int), has deafult therfor not needed to add
 Example:
 ```python
 import tkinter as tk
