@@ -41,8 +41,3 @@ def promptFileOpen(Title=None):
     file_path = filedialog.askopenfilename(title=Title)
     return file_path
 
-
-window = create_window("TEST :)", "400x400", "Grey", "metro")
-add_label(window, "TEST !!", 100, 100, None)
-add_button(window, "click me!", promptFileOpen, 50, 50)
-window.mainloop()
