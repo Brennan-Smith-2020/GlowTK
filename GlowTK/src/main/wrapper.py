@@ -1,5 +1,6 @@
 import tkinter as tk
 from tkinter import ttk
+from ttkthemes import ThemedTk
 from tkinter import filedialog
 import logging
 
@@ -10,35 +11,14 @@ class Color:
 
 
 def create_window(Title, Geometry, Background=None, Theme=None):
-    window = tk.Tk()
+    window = ThemedTk(Theme)
     window.title(Title)
     window.geometry(Geometry)
-    
-    # Apply theme if provided
-    if Theme != None:
-        try:
-            apply_theme(window, Theme)
-            print("trying to add theme")
-        except Exception as e:
-            logging.warning(f"Theme couldnt add, maybe none was specified? Error msg = {e}")
-    
     if Background == None:
         pass
     else:
         window.configure(bg=Background)
-    return window
-
-def apply_theme(window, Theme=None):
-    style = ttk.Style()
-    style.theme_use(Theme)  # Initialize the default theme
-
-    style.configure("TButton", background=Color.GREY)
-    style.configure("TLabel", foreground=Color.BLACK)
-
-    window.tk_setPalette(background=style.lookup("TButton", "background"),
-                         foreground=style.lookup("TLabel", "foreground"))
-
-    
+    return window    
 
 def add_button(window, text, command, X, Y, color=None):
     button = ttk.Button(window, text=text, command=command, style=color)
@@ -60,3 +40,9 @@ def promptFileOpen(Title=None):
         Title = "File Menu"
     file_path = filedialog.askopenfilename(title=Title)
     return file_path
+
+
+window = create_window("TEST :)", "400x400", None, "metro")
+add_label(window, "TEST !!", 100, 100, None)
+add_button(window, "click me!", promptFileOpen, 50, 50)
+window.mainloop()
