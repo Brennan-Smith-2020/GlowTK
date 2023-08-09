@@ -1,7 +1,7 @@
 import tkinter as tk
 from tkinter import ttk
 from tkinter import filedialog
-
+import logging
 
 class Color:
     WHITE = "#ffffff"
@@ -16,8 +16,11 @@ def create_window(Title, Geometry, Background=None, Theme=None):
     
     # Apply theme if provided
     if Theme != None:
-        apply_theme(window, Theme)
-        print("trying to add theme")
+        try:
+            apply_theme(window, Theme)
+            print("trying to add theme")
+        except Exception as e:
+            logging.warning(f"Theme couldnt add, maybe none was specified? Error msg = {e}")
     
     if Background == None:
         pass
