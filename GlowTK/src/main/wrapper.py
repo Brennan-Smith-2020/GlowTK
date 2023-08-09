@@ -28,4 +28,3 @@ def promptFileOpen(Title):
 
 window = create_window("TEST :)", "400x400", "white")
 text = add_textbox(window)
-window.mainloop()
