@@ -63,7 +63,7 @@ def add_button(window, text, command, X, Y, color=None):
 def add_label(window, text, X, Y, color=None, Font=None, FontSize=12):
     label = ttk.Label(window, text=text, style=color, font=(Font, FontSize))
     label.place(x=X, y=Y)
-    
+    return label
 
 def add_textbox(window, X, Y, color=None):
     entry = ttk.Entry(window, style=color)
