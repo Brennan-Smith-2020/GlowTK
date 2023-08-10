@@ -42,7 +42,6 @@ class Color:
     LIGHT_GREY = "#d3d3d3"
 
 
-
 def create_window(Title, Geometry, Background=None, Theme=None):
     window = ThemedTk(Theme)
     if Theme != Theme in ThemedTk:
