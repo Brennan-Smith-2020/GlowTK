@@ -38,7 +38,7 @@ class Color:
     DARK_GREEN = "#006400"
     DARK_RED = "#8b0000"
     DARK_BLUE = "#00008b"
-    DARK_GREY = "#a9a9a9"
+    DARK_GREY = "#272927"
     LIGHT_GREY = "#d3d3d3"
 
 
