@@ -1,5 +1,5 @@
-import tkinter as tk 
+import tkinter as tk
+from tkinter import ttk
+from ttkthemes import ThemedTk
 from tkinter import filedialog
 import logging
-import os
-from GlowTK.src.main.wrapper import promptFileOpen
