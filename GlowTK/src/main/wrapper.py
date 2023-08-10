@@ -58,7 +58,7 @@ def create_window(Title, Geometry, Background=None, Theme=None):
 def add_button(window, text, command, X, Y, color=None):
     button = ttk.Button(window, text=text, command=command, style=color)
     button.place(x=X, y=Y)
-    
+    return button
 
 def add_label(window, text, X, Y, color=None, Font=None, FontSize=12):
     label = ttk.Label(window, text=text, style=color, font=(Font, FontSize))
@@ -68,7 +68,7 @@ def add_label(window, text, X, Y, color=None, Font=None, FontSize=12):
 def add_textbox(window, X, Y, color=None):
     entry = ttk.Entry(window, style=color)
     entry.place(x=X, y=Y)  # Adjust the coordinates as needed
-
+    return entry
 
 global pathvar
 def promptFileOpen(Title=None):
