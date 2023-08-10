@@ -7,7 +7,8 @@ The code has a builtin class for choosing colors. It currently has 3 builtin. Wh
 If you get an error try importing + running initialize()
 
 ## How to import
-in this tutorial I said you needed to do import GlowTK, however if that provides an error make a parent folder to the GlowTK folder (Doesnt have to be a parent folder but is easier) than write your code by importing as follows: `from GlowTK.src.main.wrapper import [functions here, seperated by commas]
+in this tutorial I said you needed to do import GlowTK, however if that provides an error make a parent folder to the GlowTK folder (Doesnt have to be a parent folder but is easier) than write your code by importing as follows: `from GlowTK.src.main.wrapper import [functions here, seperated by commas].
+Do this until this (hopefully) this gets ported to pip.
 ## Functions:
 
 1. `promptFileOpen`
