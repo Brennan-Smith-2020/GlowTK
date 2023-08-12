@@ -2,16 +2,14 @@ import tkinter as tk
 from tkinter import ttk
 from ttkthemes import ThemedTk
 from tkinter import filedialog
-import logging
-import os
+from tkinter import colorchooser
+from pynput import keyboard
+import win32api
 
-###
-# copyright PackageCreator 2023-2024. See license for more info.
-# Do not redistrubute the software or substancial portions of the "Software"
-# Without giving proper credit to PackageCreator.
-# Do not sell the software for any sort of monetary item, wheter it be trading,
-# Money, or currency of any sort.
-###
+WelcomeMsg = True
+def welcomeMsg():
+    print("Hello from the devs of GlowTK! You can see the docs here: https://github.com/PackageCreator/GlowTK \n")
+    print("Suppress this message with WelcomeMsg = False")
 
 class Color:
     WHITE = "#ffffff"
@@ -41,19 +39,25 @@ class Color:
     DARK_GREY = "#272927"
     LIGHT_GREY = "#d3d3d3"
 
-
 def create_window(Title, Geometry, Background=None, Theme=None):
+    global mousex, mousey
     window = ThemedTk(Theme)
-    if Theme != Theme in ThemedTk:
-        logging.warn("Error, theme not specified correctly")
-        exit()
     window.title(Title)
     window.geometry(Geometry)
-    if Background == None:
-        pass
-    else:
+    
+    if Background is not None:
         window.configure(bg=Background)
-    return window    
+
+    # Initialize mouse coordinates attributes
+    mousex = 0
+    mousey = 0
+
+    def motion(event):
+        global mousex, mousey
+        mousex, mousey = event.x, event.y
+    window.bind('<Motion>', motion)
+
+    return window
 
 def add_button(window, text, command, X, Y, color=None):
     button = ttk.Button(window, text=text, command=command, style=color)
@@ -67,12 +71,43 @@ def add_label(window, text, X, Y, color=None, Font=None, FontSize=12):
 
 def add_textbox(window, X, Y, color=None):
     entry = ttk.Entry(window, style=color)
-    entry.place(x=X, y=Y)  # Adjust the coordinates as needed
+    entry.place(x=X, y=Y)
     return entry
 
-global pathvar
 def promptFileOpen(Title=None):
     if Title is None:
         Title = "File Menu"
     file_path = filedialog.askopenfilename(title=Title)
     return file_path
+
+def draw(canvas, x, y, color):
+    canvas.create_oval(x, y, x+2, y+2, fill=color)
+
+if WelcomeMsg:
+    welcomeMsg()
+    
+def pick():
+    global COLOR
+    color_tuple = colorchooser.askcolor(title="Pick a color")
+    if color_tuple[1]:  # Check if a color was selected
+        COLOR = color_tuple[1]
+def holding(event):
+    draw(canvas, event.x, event.y, COLOR)
+    canvas.bind('<Motion>', lambda event: draw(canvas, event.x, event.y, COLOR))
+    canvas.bind('<ButtonRelease-1>', isnt_holding)
+def isnt_holding(event):
+    canvas.unbind('<Motion>')
+    canvas.unbind('<ButtonRelease-1>')
+COLOR = "#000000"  # Default color
+window = tk.Tk()  # Create the main window
+window.title("DRAWING")
+window.geometry("400x400")
+button = tk.Button(window, text="Choose color", command=pick)
+button.pack()
+canvas = tk.Canvas(window, width=4000, height=4000)
+canvas.pack()
+canvas.bind('<Button-1>', holding)
+window.mainloop()
+
+
+
