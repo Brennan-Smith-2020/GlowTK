@@ -86,28 +86,5 @@ def draw(canvas, x, y, color):
 if WelcomeMsg:
     welcomeMsg()
     
-def pick():
-    global COLOR
-    color_tuple = colorchooser.askcolor(title="Pick a color")
-    if color_tuple[1]:  # Check if a color was selected
-        COLOR = color_tuple[1]
-def holding(event):
-    draw(canvas, event.x, event.y, COLOR)
-    canvas.bind('<Motion>', lambda event: draw(canvas, event.x, event.y, COLOR))
-    canvas.bind('<ButtonRelease-1>', isnt_holding)
-def isnt_holding(event):
-    canvas.unbind('<Motion>')
-    canvas.unbind('<ButtonRelease-1>')
-COLOR = "#000000"  # Default color
-window = tk.Tk()  # Create the main window
-window.title("DRAWING")
-window.geometry("400x400")
-button = tk.Button(window, text="Choose color", command=pick)
-button.pack()
-canvas = tk.Canvas(window, width=4000, height=4000)
-canvas.pack()
-canvas.bind('<Button-1>', holding)
-window.mainloop()
-
 
 
